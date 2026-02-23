@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * Package-private.
+ */
 @Profile("jdbc")
 final class JdbcReadRepository implements ReadRepository {
 

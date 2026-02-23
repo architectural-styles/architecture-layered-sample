@@ -8,6 +8,10 @@ import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.springframework.context.annotation.Profile;
 
+
+/**
+ * Package-private.
+ */
 @Profile("jpa")
 @Transactional
 final class JpaWriteRepository implements WriteRepository {

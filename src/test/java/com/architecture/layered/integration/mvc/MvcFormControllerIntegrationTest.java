@@ -32,8 +32,8 @@ class MvcFormControllerIntegrationTest {
         mvc.perform(get("/mvc/users"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("form/main-page-search"))
-                .andExpect(content().string(containsString("Поиск пользователя по имени")))
-                .andExpect(content().string(containsString("Создать нового пользователя")));
+                .andExpect(content().string(containsString("Search User by Name")))
+                .andExpect(content().string(containsString("Create New User")));
     }
 
     @Test
@@ -42,7 +42,7 @@ class MvcFormControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("form/create-form"))
                 .andExpect(model().attributeExists("request"))
-                .andExpect(content().string(containsString("Создать нового пользователя")))
+                .andExpect(content().string(containsString("Create New User")))
                 .andExpect(content().string(containsString("action=\"/mvc/users\"")));
     }
 

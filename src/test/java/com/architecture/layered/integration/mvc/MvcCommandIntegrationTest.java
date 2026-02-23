@@ -50,7 +50,7 @@ class MvcCommandIntegrationTest {
                         .param("name", "Bob Updated")
                         .param("birthDate", "1985-05-20"))
                 .andExpect(redirectedUrl("/mvc/users/search/id?id=" + id))
-                .andExpect(flash().attribute("message", "Юзер #" + id + " успешно обновлен"));
+                .andExpect(flash().attribute("message", "User #" + id + " successfully updated"));
 
         mvc.perform(get("/mvc/users/search/id").param("id", id))
                 .andExpect(status().isOk())
@@ -68,7 +68,7 @@ class MvcCommandIntegrationTest {
 
         mvc.perform(post("/mvc/users/" + id + "/delete"))
                 .andExpect(redirectedUrl("/mvc/users"))
-                .andExpect(flash().attribute("message", "Юзер удален!"));
+                .andExpect(flash().attribute("message", "User deleted!"));
     }
     @Test
     void shouldShowErrorWhenUpdatingNonExistentUser() throws Exception {

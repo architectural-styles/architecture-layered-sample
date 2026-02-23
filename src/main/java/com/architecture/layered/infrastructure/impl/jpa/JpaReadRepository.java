@@ -7,6 +7,10 @@ import org.springframework.context.annotation.Profile;
 import java.util.List;
 import java.util.Optional;
 
+
+/**
+ * Package-private.
+ */
 @Profile("jpa")
 final class JpaReadRepository implements ReadRepository {
 

@@ -8,6 +8,9 @@ import com.architecture.layered.infrastructure.api.WriteRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Package-private.
+ */
 @Configuration
 class ApplicationConfig {
 

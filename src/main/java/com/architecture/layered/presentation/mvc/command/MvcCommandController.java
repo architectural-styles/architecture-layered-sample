@@ -38,7 +38,7 @@ public class MvcCommandController {
     ) {
         useCase.updateUser(id, Mapper.toDomain(request));
         redirectAttributes.addFlashAttribute(
-                "message", "Юзер #" + id + " успешно обновлен"
+                "message", "User #" + id + " successfully updated"
         );
         return "redirect:/mvc/users/search/id?id=" + id;
     }
@@ -46,7 +46,7 @@ public class MvcCommandController {
     @PostMapping("/{id}/delete")
     public String delete(@PathVariable String id, RedirectAttributes redirectAttributes) {
         useCase.deleteUser(id);
-        redirectAttributes.addFlashAttribute("message", "Юзер удален!");
+        redirectAttributes.addFlashAttribute("message", "User deleted!");
         return "redirect:/mvc/users";
     }
 

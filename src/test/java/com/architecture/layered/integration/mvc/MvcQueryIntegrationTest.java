@@ -77,7 +77,7 @@ class MvcQueryIntegrationTest {
                 .andExpect(view().name("result/list"))
                 .andExpect(model().attribute("searchTerm", "ZZZ"))
                 .andExpect(model().attribute("userViews", List.of()))
-                .andExpect(content().string(containsString("Ничего не найдено")));
+                .andExpect(content().string(containsString("No results found.")));
     }
 
 }

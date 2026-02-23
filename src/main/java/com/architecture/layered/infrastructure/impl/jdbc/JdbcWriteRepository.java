@@ -8,6 +8,9 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 
 import java.util.Objects;
 
+/**
+ * Package-private.
+ */
 @Profile("jdbc")
 final class JdbcWriteRepository implements WriteRepository {
 

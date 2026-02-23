@@ -3,7 +3,7 @@
 @param com.architecture.layered.presentation.common.dto.Response response
 @param com.architecture.layered.presentation.common.dto.Request request
 
-<h2>Main page</h2>
+<h2>Main Page</h2>
 
 @if (error != null)
     <p style="color: red;">${error}</p>
@@ -13,31 +13,32 @@
     <p style="color: green;">${message}</p>
 @endif
 
-<h2>Поиск пользователя по имени</h2>
-<h4>При нажатии кнопки поиска с пустой формой получите всех пользователей</h4>
+<h2>Search User by Name</h2>
+<h4>Clicking the search button with an empty form will return all users</h4>
 
 <form action="/mvc/users/search/name" method="get">
     <label for="name">Name or prefix:</label>
     <input id="name" type="text" name="name"/>
-    <button type="submit">Найти</button>
+    <button type="submit">Search</button>
 </form>
 
 <hr>
 
-<h2>Поиск пользователя по ID</h2>
+<h2>Search User by ID</h2>
 
 <form action="/mvc/users/search/id" method="get">
     <label for="id">ID:</label>
     <input id="id" type="text" name="id" required />
-    <button type="submit">Найти</button>
+    <button type="submit">Search</button>
 </form>
 
 <hr>
 
-<h2>Создать нового пользователя</h2>
+<h2>Create New User</h2>
 
-<a href="/mvc/users/new">Создать нового пользователя</a>
+<a href="/mvc/users/new">Create New User</a>
 <form action="/mvc/users/new" method="get" style="display: inline;">
-    <button type="submit">Создать нового пользователя</button>
+    <button type="submit">Create New User</button>
 </form>
+
 <hr>

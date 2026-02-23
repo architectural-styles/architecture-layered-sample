@@ -10,6 +10,10 @@ import java.time.LocalDate;
 import java.util.Objects;
 import static org.jooq.impl.DSL.*;
 
+
+/**
+ * Package-private.
+ */
 @Profile("jooq")
 final class JooqWriteRepository implements WriteRepository {
 

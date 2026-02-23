@@ -7,6 +7,9 @@ import com.architecture.layered.infrastructure.api.ReadRepository;
 
 import java.util.List;
 
+/**
+ * Package-private.
+ */
 final class UserQueryService implements QueryUseCase {
 
     private final ReadRepository users;
