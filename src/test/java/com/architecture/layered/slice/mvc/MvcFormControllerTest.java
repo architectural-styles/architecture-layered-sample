@@ -1,4 +1,4 @@
-package com.architecture.layered.web.mvc;
+package com.architecture.layered.slice.mvc;
 
 import com.architecture.layered.application.api.QueryUseCase;
 import com.architecture.layered.application.api.query.UserView;

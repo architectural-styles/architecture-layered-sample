@@ -1,4 +1,4 @@
-package com.architecture.layered.web.rest;
+package com.architecture.layered.slice.rest;
 
 import com.architecture.layered.application.api.CommandUseCase;
 import com.architecture.layered.application.api.command.UpdateUserCommand;
