@@ -108,6 +108,10 @@ Errors are returned as [RFC 9457 Problem Details](https://www.rfc-editor.org/rfc
 
 Entry point: `http://localhost:8083/mvc/users`
 
+> **Note.** The MVC interface exists to demonstrate dual-presentation — two UIs
+> on top of a single application layer. In a real application, name search would
+> be the only entry point: a UUID is an internal system identifier
+> and is never exposed to the user.
 ---
 
 ## Tests

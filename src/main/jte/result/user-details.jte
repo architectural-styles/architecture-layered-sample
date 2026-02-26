@@ -1,5 +1,5 @@
 @param String message
-@param com.architecture.layered.presentation.common.dto.Response response
+@param com.architecture.layered.presentation.common.dto.UserResponse response
 
 <h2>User</h2>
 

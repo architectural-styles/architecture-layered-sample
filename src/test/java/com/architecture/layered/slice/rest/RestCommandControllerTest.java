@@ -11,6 +11,8 @@ import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.time.LocalDate;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -41,11 +43,13 @@ class RestCommandControllerTest {
         mvc.perform(put("/api/users/1")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
-                        {"name": "Alice Updated", "birthDate": "1990-01-01"}
-                        """))
+                    {"name": "Alice Updated", "birthDate": "1990-01-01"}
+                    """))
                 .andExpect(status().isNoContent());
 
-        then(commandUseCase).should().updateUser(any(UpdateUserCommand.class));
+        then(commandUseCase).should().updateUser(
+                new UpdateUserCommand("1", "Alice Updated", LocalDate.of(1990, 1, 1))
+        );
     }
 
     @Test
@@ -59,7 +63,9 @@ class RestCommandControllerTest {
     @Test
     void shouldReturn404WhenUpdatingNonExistentUser() throws Exception {
         willThrow(new UserNotFoundException("99"))
-                .given(commandUseCase).updateUser(any(UpdateUserCommand.class));
+                .given(commandUseCase).updateUser(
+                        new UpdateUserCommand("99", "Ghost", LocalDate.of(1990, 1, 1))
+                );
 
         mvc.perform(put("/api/users/99")
                         .contentType(MediaType.APPLICATION_JSON)

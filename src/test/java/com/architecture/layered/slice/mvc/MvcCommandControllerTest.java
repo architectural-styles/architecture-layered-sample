@@ -9,6 +9,8 @@ import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.time.LocalDate;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
@@ -41,7 +43,9 @@ class MvcCommandControllerTest {
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/mvc/users/search/id?id=1"));
 
-        then(commandUseCase).should().updateUser(any(UpdateUserCommand.class));
+        then(commandUseCase).should().updateUser(
+                new UpdateUserCommand("1", "Alice Updated", LocalDate.of(1990, 1, 1))
+        );
     }
 
     @Test

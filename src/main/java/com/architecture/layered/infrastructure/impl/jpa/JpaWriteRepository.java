@@ -1,4 +1,3 @@
-// @formatter:off
 package com.architecture.layered.infrastructure.impl.jpa;
 
 import com.architecture.layered.domain.User;
@@ -6,7 +5,6 @@ import com.architecture.layered.domain.exception.UserNotFoundException;
 import com.architecture.layered.infrastructure.api.WriteRepository;
 
 import jakarta.persistence.EntityManager;
-import jakarta.transaction.Transactional;
 import org.springframework.context.annotation.Profile;
 
 

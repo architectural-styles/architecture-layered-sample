@@ -1,4 +1,3 @@
-// @formatter:off
 package com.architecture.layered.application.impl;
 
 import com.architecture.layered.application.api.QueryUseCase;
@@ -39,5 +38,4 @@ class UserQueryService implements QueryUseCase {
     private UserView toView(User u) {
         return new UserView(u.id(), u.name(), u.birthDate());
     }
-
 }

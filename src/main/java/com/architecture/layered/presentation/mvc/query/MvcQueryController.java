@@ -1,4 +1,3 @@
-// @formatter:off
 package com.architecture.layered.presentation.mvc.query;
 
 import com.architecture.layered.application.api.QueryUseCase;

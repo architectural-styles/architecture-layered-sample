@@ -1,4 +1,3 @@
-// @formatter:off
 package com.architecture.layered.fake;
 
 import com.architecture.layered.domain.User;

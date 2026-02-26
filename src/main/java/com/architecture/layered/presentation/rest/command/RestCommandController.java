@@ -31,8 +31,11 @@ public final class RestCommandController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void changeProfile(@RequestBody UpdateUserRequest request) {
-        service.updateUser(Mapper.toUpdateCommand(request));
+    public void changeProfile(
+            @PathVariable String id,
+            @RequestBody UpdateUserRequest body
+    ) {
+        service.updateUser(Mapper.toUpdateCommand(id, body));
     }
 
     @DeleteMapping("/{id}")

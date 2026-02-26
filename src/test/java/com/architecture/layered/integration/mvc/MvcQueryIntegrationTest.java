@@ -23,7 +23,9 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.architecture.layered.TestData;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 @SpringBootTest
 @ActiveProfiles("jdbc")
 @AutoConfigureMockMvc

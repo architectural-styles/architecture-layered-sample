@@ -56,8 +56,8 @@ class RestCommandIntegrationTest {
         mvc.perform(put("/api/users/" + id)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
-                        {"id": "%s", "name": "Bob Updated", "birthDate": "1985-05-20"}
-                        """.formatted(id)))
+        {"name": "Bob Updated", "birthDate": "1985-05-20"}
+        """))
                 .andExpect(status().isNoContent());
 
         mvc.perform(get("/api/users/" + id))
@@ -89,8 +89,8 @@ class RestCommandIntegrationTest {
         mvc.perform(put("/api/users/non-existent-id")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
-                        {"id": "non-existent-id", "name": "Ghost", "birthDate": "1990-01-01"}
-                        """))
+                {"name": "Ghost", "birthDate": "1990-01-01"}
+                """))
                 .andExpect(status().isNotFound());
     }
 

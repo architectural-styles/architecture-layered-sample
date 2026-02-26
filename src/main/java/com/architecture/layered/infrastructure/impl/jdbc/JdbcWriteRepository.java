@@ -1,4 +1,3 @@
-// @formatter:off
 package com.architecture.layered.infrastructure.impl.jdbc;
 
 import com.architecture.layered.domain.User;

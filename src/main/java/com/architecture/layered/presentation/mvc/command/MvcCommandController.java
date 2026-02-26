@@ -1,11 +1,9 @@
-// @formatter:off
 package com.architecture.layered.presentation.mvc.command;
 
 import com.architecture.layered.application.api.CommandUseCase;
 import com.architecture.layered.presentation.common.dto.CreateUserRequest;
 import com.architecture.layered.presentation.common.dto.Mapper;
-import com.architecture.layered.presentation.common.dto.UpdateUserRequest;
-import org.springframework.stereotype.Controller;
+import com.architecture.layered.presentation.common.dto.UpdateUserRequest;import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,14 +32,15 @@ public class MvcCommandController {
 
     @PostMapping("/{id}")
     public String update(
+            @PathVariable String id,
             @ModelAttribute UpdateUserRequest request,
             RedirectAttributes redirectAttributes
     ) {
-        useCase.updateUser(Mapper.toUpdateCommand(request));
+        useCase.updateUser(Mapper.toUpdateCommand(id, request));
         redirectAttributes.addFlashAttribute(
-                "message", "User #" + request.id() + " successfully updated"
+                "message", "User #" + id + " successfully updated"
         );
-        return "redirect:/mvc/users/search/id?id=" + request.id();
+        return "redirect:/mvc/users/search/id?id=" + id;
     }
 
     @PostMapping("/{id}/delete")

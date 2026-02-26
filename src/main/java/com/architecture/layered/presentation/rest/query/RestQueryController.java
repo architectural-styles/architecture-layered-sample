@@ -1,10 +1,9 @@
-// @formatter:off
 package com.architecture.layered.presentation.rest.query;
 
 import com.architecture.layered.application.api.QueryUseCase;
-import com.architecture.layered.application.api.query.UserView;import com.architecture.layered.domain.User;
+import com.architecture.layered.application.api.query.UserView;
 import com.architecture.layered.presentation.common.dto.Mapper;
-import com.architecture.layered.presentation.common.dto.Response;
+import com.architecture.layered.presentation.common.dto.UserResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,13 +21,13 @@ public final class RestQueryController {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Response getDetails(@PathVariable String id) {
+    public UserResponse getDetails(@PathVariable String id) {
         return Mapper.toResponse(service.findById(id));
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Response> list(@RequestParam(required = false) String namePrefix) {
+    public List<UserResponse> list(@RequestParam(required = false) String namePrefix) {
 
         List<UserView> views = (namePrefix == null)
                 ? service.findAll()

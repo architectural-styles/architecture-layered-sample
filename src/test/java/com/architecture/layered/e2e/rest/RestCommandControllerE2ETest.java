@@ -40,9 +40,8 @@ class RestCommandControllerE2ETest {
         client.put().uri("/api/users/" + id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body("""
-                        {"id": "%s", "name": "Bob Updated", "birthDate": "1985-05-20"}
-                        """
-                .formatted(id))
+                {"name": "Bob Updated", "birthDate": "1985-05-20"}
+                """)
                 .exchange()
                 .expectStatus().isNoContent();
 
@@ -52,7 +51,7 @@ class RestCommandControllerE2ETest {
                 .expectBody()
                 .jsonPath("$.id").isEqualTo(id)
                 .jsonPath("$.name").isEqualTo("Bob Updated")
-                .jsonPath("$.birthDate").isEqualTo("1985-05-20");;
+                .jsonPath("$.birthDate").isEqualTo("1985-05-20");
     }
 
     @Test
@@ -76,8 +75,8 @@ class RestCommandControllerE2ETest {
         client.put().uri("/api/users/99")
                 .contentType(MediaType.APPLICATION_JSON)
                 .body("""
-                        {"id": "99", "name": "Ghost", "birthDate": "1990-01-01"}
-                        """)
+                {"name": "Ghost", "birthDate": "1990-01-01"}
+                """)
                 .exchange()
                 .expectStatus().isNotFound()
                 .expectBody()

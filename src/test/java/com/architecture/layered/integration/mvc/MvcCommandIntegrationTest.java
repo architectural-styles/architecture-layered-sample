@@ -1,4 +1,3 @@
-// @formatter:off
 package com.architecture.layered.integration.mvc;
 
 import org.junit.jupiter.api.Test;

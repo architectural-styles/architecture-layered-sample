@@ -1,7 +1,7 @@
 @import java.util.List
-@import com.architecture.layered.presentation.common.dto.Response
+@import com.architecture.layered.presentation.common.dto.UserResponse
 
-@param List<Response> userViews
+@param List<UserResponse> userViews
 @param String searchTerm
 
 <h2>Search results for name: "${searchTerm}"</h2>
@@ -10,7 +10,7 @@
     <h2>No results found.</h2>
 @endif
 
-@for (Response i : userViews)
+@for (UserResponse i : userViews)
     <li>
         ID: ${i.id()} — ${i.name()} — ${i.birthDate().toString()}
         <a href="/mvc/users/search/id?id=${i.id()}">Select</a>&nbsp;
