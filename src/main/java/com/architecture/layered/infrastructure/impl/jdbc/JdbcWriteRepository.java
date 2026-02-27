@@ -50,8 +50,8 @@ final class JdbcWriteRepository implements WriteRepository {
 
     @Override
     public void update(User user) {
-        Objects.requireNonNull(user.id(), "Id must not be null");
         Objects.requireNonNull(user, "User must not be null");
+        Objects.requireNonNull(user.id(), "Id must not be null");
 
         ensureFound(jdbc.sql(Sql.UPDATE)
                 .param("id", user.id())
