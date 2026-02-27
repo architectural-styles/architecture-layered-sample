@@ -9,8 +9,8 @@ import java.util.Objects;
  */
 public record User(String id, String name, LocalDate birthDate) {
     public User {
-        Objects.requireNonNull(user, "User must not be null");
-        Objects.requireNonNull(user.id(), "Id must not be null");
+        Objects.requireNonNull(id, "Id must not be null");
+        Objects.requireNonNull(name, "Name must not be null");
         if (name.isBlank()) throw new IllegalArgumentException("Name blank");
         if (birthDate.isAfter(LocalDate.now())) throw new IllegalArgumentException("Future date");
     }
